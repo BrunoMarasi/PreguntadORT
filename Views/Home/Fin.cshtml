@@ -7,14 +7,15 @@
 }
 
 <body>
-    <div class="result-wrapper">
-        <p class="end-message">FIN</p>
+    <div class="result-container">
+        <p class="finish-text">FIN</p>
 
-        <div class="result-details">
-            <h1 class="user-name">NOMBRE USUARIO: @username</h1>
-            <h1 class="final-score">PUNTAJE FINAL: @puntajeActual</h1>
+        <div class="details-box">
+            <h1 class="user-info">NOMBRE USUARIO: @username</h1>
+            <h1 class="score-display">PUNTAJE FINAL: @puntajeActual</h1>
 
-            <a href='@Url.Action("Index", "Home")' class="retry-button">VOLVER A JUGAR</a>
+            <a href='@Url.Action("Index", "Home")' class="play-again-btn">VOLVER A JUGAR</a>
         </div>
     </div>
 </body>
+
