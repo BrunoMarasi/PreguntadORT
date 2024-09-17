@@ -1,0 +1,37 @@
+@{
+    ViewData["Title"] = "Juego";
+    var username = Juego.username;
+    var puntajeActual = Juego.puntajeActual;
+    var nroPreguntaActual = Juego.contadorNroPreguntaActual + 1;
+    <link rel="stylesheet" href="styles.css">
+
+}
+
+<body>
+    <div class="header">
+        <p class="username">NOMBRE USUARIO: @username</p>
+        <p class="score">PUNTAJE ACTUAL: @puntajeActual</p>
+    </div>
+
+    <h1>ENUNCIADO PREGUNTA NRO @nroPreguntaActual: @ViewBag.siguientePregunta.enunciado</h1>
+
+    <div class="container-form">
+        <form action='@Url.Action("VerificarRespuesta", "Home")' method="post">
+            <fieldset>
+                <input type="hidden" name="idPregunta" value="@ViewBag.siguientePregunta.idPregunta" />
+
+                <div class="options">
+                    @foreach(Respuesta item in ViewBag.listaRespuestas)
+                    {
+                        <label class="option-square">
+                            <input type="radio" name="idRespuesta" value="@item.idRespuesta" required />
+                            <span>@item.contenido</span>
+                        </label>
+                    }
+                </div>
+            </fieldset>
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
+</body>
+</html>

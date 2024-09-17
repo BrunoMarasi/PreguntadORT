@@ -1,0 +1,27 @@
+@{
+    ViewData["Title"] = "Respuesta";
+}
+
+<div class="container text-center">
+    <h1>Resultado</h1>
+    
+    @if (ViewBag.esCorrecto)
+    {
+        <div>
+            
+            <img src="/imagenes/respuestaCorrecta.png">
+
+        </div>
+    }
+    else
+    {
+        <div>
+            
+            <img src="/imagenes/respuestaIncorrecta.png">
+
+        </div>
+    }
+
+    <a href='@Url.Action("Jugar", "Home")' class="btn btn-primary">Siguiente Pregunta</a>
+</div>
+
